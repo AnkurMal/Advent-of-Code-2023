@@ -1,11 +1,10 @@
-use std::fs;
+use std::{fs, vec};
 
 fn main() {
     let binding = fs::read_to_string("input.txt").unwrap();
     let lines: Vec<&str> = binding.lines().collect();
     
-    let mut nvec: Vec<usize> = Vec::new();
-    nvec.resize(lines.len(), 0);
+    let mut nvec: Vec<usize> = vec![0; lines.len()];
     
     for (i, line) in lines.iter().enumerate() {
         let vec: Vec<&str> = line.split(" | ").collect();
@@ -29,5 +28,5 @@ fn main() {
         }
     }
     let sum: usize = nvec.iter().sum();
-    println!("{}", sum);
+    println!("{:?}", sum);
 }
