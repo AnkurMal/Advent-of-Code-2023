@@ -4,7 +4,7 @@ fn main() {
     let binding = fs::read_to_string("input.txt").unwrap();
     let lines: Vec<&str> = binding.lines().collect();
     
-    let mut nvec: Vec<usize> = vec![0; lines.len()];
+    let mut nvec: Vec<usize> = vec![1; lines.len()];
     
     for (i, line) in lines.iter().enumerate() {
         let vec: Vec<&str> = line.split(" | ").collect();
@@ -20,7 +20,6 @@ fn main() {
             }
         }
 
-        nvec[i] += 1;
         for _ in 0..nvec[i] {
             for k in i+1..=i+points {
                 nvec[k] += 1;
