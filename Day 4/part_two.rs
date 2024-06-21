@@ -28,5 +28,5 @@ fn main() {
         }
     }
     let sum: usize = nvec.iter().sum();
-    println!("{:?}", sum);
+    println!("{}", sum);
 }
