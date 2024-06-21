@@ -1,4 +1,4 @@
-use std::{fs, vec};
+use std::fs;
 
 fn main() {
     let binding = fs::read_to_string("input.txt").unwrap();
