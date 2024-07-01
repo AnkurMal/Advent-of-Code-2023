@@ -5,6 +5,7 @@ use std::fs;
 enum Type {
     HighCard, OnePair, TwoPair, ThreeKind, FullHouse, FourKind, FiveKind
 }
+
 #[derive(Debug)]
 struct CamelCard<'a> {
     card: &'a str,
@@ -53,6 +54,7 @@ fn main() {
                 pair.push(count);
             }
         }
+        
         ty = match pair[..] {
                 [2]             => Type::OnePair,
                 [2, 2]          => Type::TwoPair,
@@ -62,6 +64,7 @@ fn main() {
                 [5]             => Type::FiveKind,
                 _               => Type::HighCard
         };
+        
         camel_card.push(CamelCard::new(card[0], card[1].parse().unwrap(), ty));
     }
 
